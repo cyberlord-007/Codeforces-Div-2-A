@@ -34,10 +34,10 @@ int main()
             break;
         }
     }
-    int ind = i;
+    int idx = i;
     for(j=n-1;j>=0;j--){
         if(arr[j] == min){
-            if(ind > j){
+            if(idx > j){
                 swaps += abs(j - (n-1)) - 1;
                 break;
             }
