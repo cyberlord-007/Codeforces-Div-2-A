@@ -16,25 +16,24 @@ int main()
     freopen("error.txt", "w", stderr); 
     freopen("output.txt", "w", stdout); 
 #endif 
-    
-    int n; cin>>n;
-    int p;
-    cin>>p;
-    int x[p];
-    for(int i=0;i<p;i++)
-        cin>>x[i];
-    int q;
-    cin>>q;
-    int y[q];
-    for(int i=0;i<q;i++)
-        cin>>y[i];
-    set<int>s;
-    for(int i=0;i<p;i++) s.insert(x[i]);
-    for(int i=0;i<q;i++) s.insert(y[i]);
-    if(s.size()==n)
-        cout<<"I become the guy."<<endl;
-    else
-        cout<<"Oh, my keyboard!"<<endl;
+
+    ll n,k;
+    cin>>n>>k;
+    ll odds,evens,res;
+    if(n%2 == 0){
+        odds = n/2;
+        evens = n/2;
+    }
+    else if(n%2 == 1){
+        odds = (n/2) + 1;
+        evens = n - odds;
+    }
+    if(k <= odds)
+        res = (k*2)-1;
+    else 
+        res = (k-odds)*2;
+    cout<<res;
     cerr << "time taken : " << (float)clock() / CLOCKS_PER_SEC << " secs" << endl; 
     return 0; 
+    
 } 
