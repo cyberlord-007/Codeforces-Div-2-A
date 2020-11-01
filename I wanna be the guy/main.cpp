@@ -16,15 +16,25 @@ int main()
     freopen("error.txt", "w", stderr); 
     freopen("output.txt", "w", stdout); 
 #endif 
-  
-    string str; cin>>str;
-    set<char>s;
-    for(int i=0;i<str.size();i++){
-        if(str[i]>='a' && str[i]<='z'){
-            s.insert(str[i]);
-        }
-    }
-    cout<<s.size();
+    
+    int n; cin>>n;
+    int p;
+    cin>>p;
+    int x[p];
+    for(int i=0;i<p;i++)
+        cin>>x[i];
+    int q;
+    cin>>q;
+    int y[q];
+    for(int i=0;i<q;i++)
+        cin>>y[i];
+    set<int>s;
+    for(int i=0;i<p;i++) s.insert(x[i]);
+    for(int i=0;i<q;i++) s.insert(y[i]);
+    if(s.size()==4)
+        cout<<"I become the guy."<<endl;
+    else
+        cout<<"Ohh, my keyboard!"<<endl;
     cerr << "time taken : " << (float)clock() / CLOCKS_PER_SEC << " secs" << endl; 
     return 0; 
 } 
