@@ -16,16 +16,16 @@ int main()
     freopen("error.txt", "w", stderr); 
     freopen("output.txt", "w", stdout); 
 #endif 
-  
-    int n,m;
-    cin>>n>>m;
-    int arr[m];
-    int res = INT_MAX;
-    for(int i=0;i<m;i++) cin>>arr[i];
-    sort(arr,arr+m);
-    for(int i=0;i<m && i+n<=m;i++)
-        res = min(res,arr[i+n-1]-arr[i]);
-    cout<<res<<endl;
+    
+    int arr[3];
+    for(int i=0;i<3;i++)
+        cin>>arr[i];
+    int sum = 0,prod = 1;
+    for(int i=0;i<2;i++){
+        sum += arr[i];
+        prod *= arr[i];
+    }
+    cout<<max((arr[1]+arr[2])*arr[0],max(sum+arr[2],max(prod+arr[2],max(sum*arr[2],prod*arr[2]))));
     cerr << "time taken : " << (float)clock() / CLOCKS_PER_SEC << " secs" << endl; 
     return 0; 
 } 
